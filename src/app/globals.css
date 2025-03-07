@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar{
+ margin-top: auto;
+  
+}
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Start off-screen */
+  width: 130px; /* Adjust width as needed */
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  z-index: 20;
+  padding-top: 70px; /* Adjust based on your navbar height */
+}
+
+.mobile-sidebar.open {
+  left: 0; /* Slide in */
+}
+.mobile-sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  display: none;
+}
+
+.mobile-sidebar-backdrop.open {
+  display: block;
+}
+
+/* globals.css */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+/* globals.css */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-animation {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* globals.css */
+/* globals.css */
+/* globals.css */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: fit-content; /* Use fit-content instead of 100% */
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #2563eb; /* Blue color for the caret */
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #2563eb; /* Blue caret */
+  animation: typing 2s steps(13, end), blink-caret 0.75s step-end infinite;
+  vertical-align: bottom; /* Ensures the text stays aligned */
+  width: fit-content; /* Ensures the span doesn't exceed its natural width */
+}
+
+
+/* Hide the background image on larger screens */
+.background-image-sm {
+  display: none; /* Hidden by default */
+  height: 300px; /* Adjust height as needed */
+  width: 100%;
+  background-image: url("/images/mahaD2.jpg");
+  background-size: cover; /* Ensure the image covers the div */
+  background-position: center; /* Center the image */
+}
+
+/* Hide the <Image /> component on smaller screens */
+.image-lg {
+  display: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1023px) { /* Adjust breakpoint as needed */
+  .background-image-sm {
+    display: block; /* Show background image */
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 1024px) { /* Adjust breakpoint as needed */
+  .image-lg {
+    display: block; /* Show <Image /> component */
+    margin-right: 3rem; /* Adjust margin as needed */
+  }
+}
