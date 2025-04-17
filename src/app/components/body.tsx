@@ -1,10 +1,14 @@
 "use client";
 import Image from "next/image";
-
+import { FaLinkedin } from "react-icons/fa6";
+import { FaGithubSquare } from "react-icons/fa";
+<FaGithubSquare />
 import pic from "../images/mahaD2.jpg";
 import Contact from "../contact/page";
-import Projects from "../projects/page";
+import Projects from "../projects/index";
 import AboutUs from "../about/page";
+<FaLinkedin />
+import Link from "next/link";
 
 export default function Hom() {
   const scroll = (id: string) => {
@@ -29,7 +33,7 @@ export default function Hom() {
           <p className="mt-2 text-blue-600 text-2xl">
             I am passionate{" "}
             <span className="typing-animation text-blue-600 font-semibold">
-              Web developer
+              NextJS Developer
             </span>
           </p>
           <p className="mt-4 text-xl text-blue-600 max-w-md">
@@ -57,18 +61,28 @@ export default function Hom() {
             </div>
           </div>
         </div>
-
-        {/* Image */}
-        <div className="mt-8 sm:mt-0">
+        <div className="relative">
+        <div className=" relative mt-8 sm:mt-0">
           <Image
             src={pic}
             alt="pic"
             height={500}
             width={500}
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg border-4 "
           />
         </div>
+          <div className="absolute -top-2 -left-0 mt-10 lg:mt-4 p-2 gap-2">
+            <Link href="https://github.com/Mahad-Usman-15"><FaGithubSquare className="w-10 h-10 text-gray-600"/></Link>
+            <Link href="https://www.linkedin.com/in/mahad-usman-45497a353/"><FaLinkedin className="w-10 h-10  text-blue-600"/></Link>
+          </div>
+
+
+        </div>
       </div>
+
+      {/* Image */}
+
+
 
       {/* Other Sections */}
       <AboutUs />

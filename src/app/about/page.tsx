@@ -45,25 +45,31 @@ const skills: Skills[] = [
 
 export default function AboutUs() {
     const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = "/Mahadusman.pdf";
-        link.download = "Mahadusman.pdf"; // Customize the file name here
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        try {
+            const link = document.createElement("a");
+            link.href = "/Mahadusman.pdf";
+            link.download = "Mahadusman.pdf"; // Better filename with spaces replaced
+            link.target = "_blank"; // Open in new tab if download fails
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (error) {
+            console.error("Download failed:", error);
+            // Optional: Add user feedback here
+        }
     };
 
     return (
-        <div id="section2">
+        <div id="section2" className="border-t-2  mt-4 lg:mt-8">
             {/* Add min-h-screen to ensure full height on shorter screens */}
-            <div className="bg-gray-100 min-h-screen flex justify-start items-center flex-col gap-6 lg:gap-10 ml-0 lg:ml-28 mt-2 p-4">
+            <div className=" min-h-screen flex justify-start items-center flex-col gap-6 lg:gap-10 ml-0 lg:ml-28 mt-2 p-4">
                 {/* About Me Section */}
                 <div className="mt-12 lg:mt-4 text-left w-full">
                     <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-blue-400 mt-2">
                         About Me
                     </h1>
                     <h2 className="font-semibold text-blue-900 text-2xl mt-4">
-                        I'M <br />
+                        I M <br />
                         <span className="typing-animation text-3xl font-bold text-blue-900">
                             Mahad Usman
                         </span>
@@ -110,13 +116,15 @@ export default function AboutUs() {
 
                 {/* Download CV Button */}
                 <div className="w-full flex justify-start">
-                    <button
-                        onClick={handleDownload}
-                        className="w-32 h-12 text-white font-bold bg-blue-900 hover:bg-transparent hover:text-blue-900 hover:border hover:border-blue-900 transition-all duration-300 ease-in-out"
-                    >
-                        Download CV
-                    </button>
-                </div>
+
+        <button
+        onClick={handleDownload}
+            className="w-32 h-12 text-white font-bold bg-blue-900 hover:bg-transparent hover:text-blue-900 hover:border hover:border-blue-900 transition-all duration-300 ease-in-out"
+        >
+            Download CV
+        </button>
+    
+</div>
             </div>
 
             {/* Skills Section */}

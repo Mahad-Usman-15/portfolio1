@@ -1,6 +1,17 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+  background-color: #f7f7f7;
+  color:#000000;
+  transition: background-color 0.3s,color 0.3;
+}
+body.dark{
+  background-color: #000000;
+  color:#f7f7f7;
+  
+}
 
 .navbar{
  margin-top: auto;
