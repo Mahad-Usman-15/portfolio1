@@ -123,7 +123,7 @@ export default function ProjectPage({ params }: { params: Promise<{ slug: string
   if (filteredProjects.length === 0) {
     return (
       <div className="flex justify-center items-center h-[50vh]">
-        <p className="text-xl">No projects found in this category</p>
+        <p className="text-xl">Projects coming soon..</p>
       </div>
     );
   }
