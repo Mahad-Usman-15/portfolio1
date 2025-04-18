@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link"
 import { useState, useEffect } from "react";
 import { FaHome } from "react-icons/fa";
 import { FaBookOpenReader } from "react-icons/fa6";
@@ -41,7 +41,7 @@ export default function SideBar() {
       {/* Desktop Sidebar */}
       <div className={`navbar hidden lg:block flex h-screen top-0 left-0 justify-start flex-col z-10 fixed items-center w-28 shadow-lg ${darkMode ? "bg-gray-900" : "bg-white"}`}>
         <div className="bg-blue-700 w-full flex justify-center items-center h-12">
-          <h1 className="font-extrabold text-sm text-white">Mahad Usman</h1>
+          <Link href="/"><h1 className="font-extrabold text-sm text-white">Mahad Usman</h1></Link>
         </div>
         <div className="flex justify-center items-center mt-4">
           <ul className="flex justify-center items-center align-center flex-col gap-12">
@@ -80,9 +80,9 @@ export default function SideBar() {
       {/* Mobile Navbar */}
       <div className={`flex justify-between items-center flex-row block lg:hidden p-2 w-full h-14 shadow-md fixed z-20 mr-12 ${darkMode ? "bg-gray-900" : "bg-white"}`}>
         <div>
-          <h1 className={`text-blue-700 text-2xl sm:text-3xl font-extrabold ${darkMode ? "text-blue-300" : ""}`}>
+          <Link href="/"> <h1 className={`text-blue-700 text-2xl sm:text-3xl font-extrabold ${darkMode ? "text-blue-300" : ""}`}>
             Mahad Usman
-          </h1>
+          </h1></Link> 
         </div>
         <div className="flex flex-row items-left gap-2">
           <button onClick={toggleDarkMode}>
